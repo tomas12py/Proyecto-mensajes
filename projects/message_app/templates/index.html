@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+  <form id = "form" method = "post" class = "form">
+    {% csrf_token %}
+  <div class="container_card">
+    <div class="card-form">
+        <a class="singup">Ingresa tu mensaje</a> 
+        <div class="inputBox1"> 
+          <!-- inputs para enviar informacion a la base de datos -->
+            <input type="text" id = "name" name = "name"> 
+            <span class="user">Name</span>
+        </div>
+
+        <div class="inputBox">
+            <input type="text" id = "message" name = "message">
+            <span>message</span>
+        </div>
+
+        <div class="inputBox">
+            <input type= "email" id = "email" name = "email">
+            <span>email</span>
+        </div>
+
+        <input type = "submit" class="enviar"></input> 
+    </div>
+    <!--Div para traer los errores de la validacion del formulario con javascript-->
+    <div id = "warnings" class = "warnings" > </div>
+  </form>
+</div>
+<script src = "{% static 'js/functions.js' %}"></script>
+</body>
+</html>
